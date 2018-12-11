@@ -1,0 +1,6 @@
+.login-page {
+    box-sizing: border-box;
+    padding-top: 94%;
+    min-height: 100vh;
+    background: #032d43 url('../../asserts/images/splash.jpg') center 0/contain no-repeat;
+}

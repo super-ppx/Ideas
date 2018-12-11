@@ -1,0 +1,15 @@
+.login-from__input {
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+}
+.login-from__input .am-list-line,{
+    border-bottom: none!important;
+}
+.login-from__input .am-list-line::after{
+    height: 0!important;
+}
+.login-from__icon {
+    width: 1em!important;
+    height: 1em!important;
+}
+
