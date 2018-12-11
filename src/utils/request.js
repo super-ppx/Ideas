@@ -1,3 +1,3 @@
-export default (req) => {
-    return fetch(req);
-}
+export default req => {
+  return fetch(req);
+};

@@ -1,0 +1,22 @@
+.idea-detail__author {
+  color: #586069;
+  font-size: 0.9em;
+  overflow: hidden;
+}
+
+.idea-detail__author-avatar {
+  width: 2.2em;
+  height: 2.2em;
+  border-radius: 5px;
+  float: left;
+  margin-right: 10px;
+}
+
+.idea-detail__content {
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.idea-detail-page .am-image-picker-item-remove {
+  display: none;
+}

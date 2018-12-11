@@ -1,0 +1,14 @@
+.idea-form__input {
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+}
+.idea-form__input .am-list-line {
+  border-bottom: none !important;
+}
+.idea-form__input .am-list-line::after {
+  height: 0 !important;
+}
+.am-image-picker-list {
+  margin-left: -8px;
+  margin-right: -8px;
+}

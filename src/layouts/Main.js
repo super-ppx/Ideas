@@ -1,33 +1,50 @@
 import React from 'react';
-import { NavBar, Icon,  } from 'antd-mobile';
+import { Link, withRouter } from 'react-router-dom';
+import { NavBar, Icon } from 'antd-mobile';
 
 class MainLayout extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            openDrawer: false
-        }
-    }
-    render() {
-        return (
-            <>
-                <NavBar
-                    style={{backgroundColor: '#24292e'}}
-                    leftContent={<Icon type="ellipsis" style={{ height: '45px', padding: '0 1em' }} />}
-                    rightContent={[
-                        <span
-                            key={0}
-                            style={{ fontSize: '1.5em', lineHeight: '45px', padding: '0 1em' }}
-                            onClick = {()=> {console.log(this.state.openDrawer);this.setState({openDrawer: !this.state.openDrawer})}}
-                        >
-                            +
-                        </span>,
-                    ]}
-                >Ideas</NavBar>
-                {React.cloneElement(this.props.children, {openDrawer: this.state.openDrawer})}
-            </>
-        )
-    }
+  render() {
+    const { match, location } = this.props;
+    return (
+      <>
+        <NavBar
+          style={{ backgroundColor: '#24292e' }}
+          leftContent={
+            <Icon
+              type="ellipsis"
+              style={{
+                color: 'rgba(255,255,255, .75)',
+                height: '45px',
+                padding: '0 1em'
+              }}
+            />
+          }
+          rightContent={[
+            <span key={0} style={{ lineHeight: '45px', padding: '0 1em' }}>
+              {location.pathname.includes('/idea/create') ? (
+                <Link
+                  style={{ color: 'rgba(255,255,255, .75)' }}
+                  to={`${match.path}/ideas`}
+                >
+                  Back
+                </Link>
+              ) : (
+                <Link
+                  style={{ color: 'rgba(255,255,255, .75)', fontSize: '1.5em' }}
+                  to={`${match.path}/idea/create`}
+                >
+                  +
+                </Link>
+              )}
+            </span>
+          ]}
+        >
+          Ideas
+        </NavBar>
+        {this.props.children}
+      </>
+    );
+  }
 }
 
-export default MainLayout;
+export default withRouter(MainLayout);
